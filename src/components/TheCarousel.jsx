@@ -5,13 +5,25 @@ import carouselData from "../assets/db/data.js";
 function TheCarousel() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 
+	// function nextSlide() {
+	// 	setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+	// }
+
+	// function prevSlide() {
+	// 	setCurrentSlide(
+	// 		(prev) => (prev - 1 + carouselData.length) % carouselData.length,
+	// 	);
+	// }
+
 	function nextSlide() {
-		setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+		setCurrentSlide((prev) =>
+			prev === carouselData.length - 1 ? 0 : prev + 1,
+		);
 	}
 
 	function prevSlide() {
-		setCurrentSlide(
-			(prev) => (prev - 1 + carouselData.length) % carouselData.length,
+		setCurrentSlide((prev) =>
+			prev === 0 ? carouselData.length - 1 : prev - 1,
 		);
 	}
 
