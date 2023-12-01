@@ -5,21 +5,23 @@ import carouselData from "../assets/db/data.js";
 function TheCarousel() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 
-	const nextSlide = () =>
+	function nextSlide() {
 		setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+	}
 
-	const prevSlide = () =>
+	function prevSlide() {
 		setCurrentSlide(
 			(prev) => (prev - 1 + carouselData.length) % carouselData.length,
 		);
+	}
 
-	const handleKeyDown = (e) => {
+	function handleKeyDown(e) {
 		if (e.key === "ArrowRight") {
 			nextSlide();
 		} else if (e.key === "ArrowLeft") {
 			prevSlide();
 		}
-	};
+	}
 
 	return (
 		<div className={style.carousel} onKeyDown={handleKeyDown}>
@@ -38,6 +40,7 @@ function TheCarousel() {
 				<p className={style.text}>{carouselData[currentSlide].text}</p>
 			</div>
 			<p>Usare i tasti freccia destra e sinistra per scorrere il carosello</p>
+			<p>(Prima però bisogna cliccare sui buttons...)</p>
 		</div>
 	);
 }
