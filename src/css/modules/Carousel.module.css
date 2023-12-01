@@ -1,0 +1,44 @@
+.carousel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 80vw;
+	margin-inline: auto;
+	padding: 3rem 0;
+}
+
+.image {
+	position: relative;
+	width: 600px;
+	object-fit: cover;
+}
+.text {
+	font-size: 2rem;
+	width: 100%;
+	text-align: center;
+	background-color: #253030;
+	color: #dddddd;
+}
+
+.btnCarousel {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #460546;
+	color: #dddddd;
+	padding: 1rem 0.5rem;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btnPrev {
+	left: -60px;
+}
+
+.btnNext {
+	right: -60px;
+}
